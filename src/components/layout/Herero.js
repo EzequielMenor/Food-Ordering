@@ -3,15 +3,16 @@ import Right from "../icons/Right";
 
 export default function Hero() {
   return (
-    <section className="hero pt-12">
+    <section className="hero mt-4">
       <div className="py-12">
         <h1 className="text-4xl font-semibold">
           Todo<br />
           es mejor<br />
           con&nbsp;
           <span className="text-secondary">Pi</span>
-          <span className="text-secondary">zz</span>
-          <span className="text-secondary">a</span>
+          <span className="text-tertiary">z</span>
+          <span className="text-quaternary">z</span>
+          <span className="text-quinary">a</span>
         </h1>
         <p className="my-6 text-gray-500 text-sm">
           La pizza es la pieza que faltaba para que cada día sea completo, una
@@ -22,7 +23,7 @@ export default function Hero() {
             Pide ahora
             <Right />
           </button>
-          <button className="flex gap-2 py-2 text-gray-600 font-semibold">
+          <button className="flex gap-2 px-4 py-2 text-gray-600 font-semibold">
             Saber más
             <Right />
           </button>
