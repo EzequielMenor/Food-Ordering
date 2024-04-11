@@ -2,6 +2,8 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import NextAuth from "next-auth"
 import * as mongoose from "mongoose";
 import {User} from "../../../models/User.js";
+import bcrypt from 'bcrypt';
+
 
 const handler = NextAuth({
   secret: process.env.SECRET,

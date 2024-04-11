@@ -19,11 +19,11 @@ export default function Hero() {
           simple unión en la vida.
         </p>
         <div className="flex gap-4 text-sm">
-          <button className=" bg-primary uppercase flex items-center gap-2 text-white px-4 py-2 rounded-full">
+          <button className="justify-center bg-primary uppercase flex items-center gap-2 text-white px-4 py-2 rounded-full">
             Pide ahora
             <Right />
           </button>
-          <button className="flex gap-2 px-4 py-2 text-gray-600 font-semibold">
+          <button className="flex items-center border-0 gap-2 px-4 py-2 text-gray-600 font-semibold">
             Saber más
             <Right />
           </button>

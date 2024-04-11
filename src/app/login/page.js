@@ -6,13 +6,14 @@ import Image from "next/image";
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loginInProgress, setLoginInProgress] = useState(false)
+  const [loginInProgress, setLoginInProgress] = useState(false);
 
   async function handleFormSubmit(ev) {
     ev.preventDefault();
-    setLoginInProgress()
+    setLoginInProgress(true)
 
-    await signIn('credentials', {email, password, callbackUrl: '/'});
+    const response = await signIn('credentials', {email, password});
+    console.log(response)
 
     setLoginInProgress(false);
   }
