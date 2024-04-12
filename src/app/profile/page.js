@@ -2,10 +2,21 @@
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { redirect } from "next/navigation";
+import { useState } from "react";
 
 export default function ProfilePage() {
   const session = useSession();
+  const [userName, setUsrName] = useState(session?.data?.user?.name || "");
   const { status } = session;
+
+  async function handleProfileInfoUpdate(ev) {
+    ev.preventDefault();
+    const response = await fetch('/ap/profile', {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name:userName}),
+    })
+  }
 
   if (status === "loading") {
     return "Loading...";
@@ -27,16 +38,26 @@ export default function ProfilePage() {
               <Image
                 className="rounded-lg h-full w-full mb-1"
                 src={"/pizza.png"}
-                width={250}
-                height={250}
+                width={100}
+                height={100}
               ></Image>
               <button type="button">Editar</button>
             </div>
           </div>
-          <div className="grow">
-            <input type="text" placeholder="Primer y segundo nombre" />
+          <form className="grow" onSubmit={handleProfileInfoUpdate}>
+            <input
+              type="text"
+              placeholder="Primer y segundo nombre"
+              value={userName}
+              onChange={(ev) => setUsrName(ev.target.value)}
+            />
+            <input
+              type="email"
+              disabled={true}
+              value={session.data?.user.email}
+            />
             <button type="submit">Guardar</button>
-          </div>
+          </form>
         </div>
       </form>
     </section>
