@@ -15,7 +15,7 @@ export default function HomeMenu() {
       </div>
       <div className="text-center mb-4">
         <SectionHeaders 
-          subHeader={"Echa un vistado"} 
+          subHeader={"Echa un vistazo"} 
           mainHeader={"Menu"}
         />
       </div>

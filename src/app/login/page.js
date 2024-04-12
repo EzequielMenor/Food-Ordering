@@ -12,10 +12,22 @@ export default function LoginPage() {
     ev.preventDefault();
     setLoginInProgress(true);
 
-    // await signIn("credentials", { email, password});
+    const signInResponse = await signIn("credentials", { email, password });
+
+    if (signInResponse?.error) {
+      console.error("Error during login:", signInResponse.error);
+      // Aquí puedes mostrar un mensaje de error al usuario
+      // Por ejemplo: setError(true);
+    } else {
+      // Inicio de sesión exitoso
+      // Redirige al usuario a la página deseada
+      // Por ejemplo: router.push("/dashboard");
+      router.push("/");
+    }
 
     setLoginInProgress(false);
   }
+
   return (
     <section className="mt-8">
       <h1 className="text-center text-primary text-4xl mb-4">Login</h1>
