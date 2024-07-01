@@ -8,9 +8,6 @@ export default function MenuItem() {
       <p className="text-gray-500 text-sm">
         Laboris aliquip aute sit Lorem proident fugiat est nostrud.
       </p>
-      <button className="mt-4 bg-primary text-white rounded-full px-8 py-2">
-        Añadir al carrito 12€
-      </button>
     </div>
-  );
+  )
 }
